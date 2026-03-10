@@ -38,16 +38,19 @@
     display: none;
     flex-direction: column;
     height: 100dvh;
-    overflow-y: auto;
+    overflow-y: scroll;
     -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
   }
   .screen.active { display: flex; }
 
   /* ── WELCOME / FIRST-TIME SETUP ── */
   #welcomeScreen {
-    padding: 60px 28px 40px;
+    padding: 60px 28px 60px;
     gap: 0;
     justify-content: flex-start;
+    height: auto;
+    min-height: 100dvh;
   }
 
   .welcome-eyebrow {
@@ -129,9 +132,11 @@
 
   /* ── SETUP SCREEN (settings) ── */
   #setupScreen {
-    padding: 52px 24px 40px;
+    padding: 52px 24px 60px;
     gap: 18px;
     justify-content: flex-start;
+    height: auto;
+    min-height: 100dvh;
   }
 
   .setup-header {
@@ -346,7 +351,7 @@
   }
 
   /* ── CONFIRM SCREEN ── */
-  #confirmScreen { padding: 52px 20px 40px; gap: 16px; }
+  #confirmScreen { padding: 52px 20px 60px; gap: 16px; min-height: 100dvh; height: auto; }
 
   .confirm-back {
     display: flex; align-items: center; gap: 8px;
@@ -445,7 +450,7 @@
   .success-detail { font-size: 15px; color: var(--muted); line-height: 1.6; }
 
   /* ── MANUAL SCREEN ── */
-  #manualScreen { padding: 52px 20px 40px; gap: 16px; }
+  #manualScreen { padding: 52px 20px 60px; gap: 16px; min-height: 100dvh; height: auto; }
 
   .paper-list { display: flex; flex-direction: column; gap: 8px; flex: 1; }
 
