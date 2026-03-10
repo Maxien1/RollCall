@@ -37,7 +37,8 @@
   .screen {
     display: none;
     flex-direction: column;
-    height: 100dvh;
+    min-height: 100dvh;
+    height: auto;
     overflow-y: scroll;
     -webkit-overflow-scrolling: touch;
     overscroll-behavior: contain;
@@ -452,7 +453,7 @@
   /* ── MANUAL SCREEN ── */
   #manualScreen { padding: 52px 20px 60px; gap: 16px; min-height: 100dvh; height: auto; }
 
-  .paper-list { display: flex; flex-direction: column; gap: 8px; flex: 1; }
+  .paper-list { display: flex; flex-direction: column; gap: 8px; }
 
   .paper-item {
     background: var(--card); border: 1px solid var(--border);
