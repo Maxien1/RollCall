@@ -27,21 +27,18 @@
   }
 
   html, body {
-    height: 100%;
-    background: var(--bg);
-    color: var(--text);
-    font-family: 'Barlow', sans-serif;
-    overflow: hidden;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Barlow', sans-serif;
+  /* Removed overflow: hidden so the page can actually scroll */
   }
 
   .screen {
-    display: none;
-    flex-direction: column;
-    position: fixed;
-    inset: 0;
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
-    overscroll-behavior: contain;
+  display: none;
+  flex-direction: column;
+  min-height: 100vh; /* Ensures short screens still fill the viewport */
+  /* Removed position: fixed and internal overflow rules */
   }
   .screen.active { display: flex; }
 
@@ -264,7 +261,13 @@
   .btn-ghost   { background: var(--card);   color: var(--text); border: 1.5px solid var(--border); }
 
   /* ── SCANNER SCREEN ── */
-  #scanScreen { position: relative; overflow: hidden; }
+  #scanScreen { 
+  position: fixed; 
+  inset: 0; 
+  overflow: hidden; 
+  z-index: 10;
+  background: var(--bg); /* Prevents background bleed */
+  }
 
   #cameraView { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
   #cameraView video { width: 100% !important; height: 100% !important; object-fit: cover !important; }
